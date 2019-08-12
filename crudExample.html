@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+    <div class="row" id="table">
+        <div class="col-md-4">
+            <table class="table table-bordered table-hover" style="width: 300px">
+                <thead>
+                    <tr>
+                        <td>
+                            A
+                        </td>
+                        <td>
+                            B
+                        </td>
+                        <td>
+                            Delete
+                        </td>
+                        <td>
+                            Update
+                        </td>
+                        <td>
+                            Detail
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in items">
+                        <td>
+                            {{item.A}}
+                        </td>
+                        <td>
+                            {{item.B}}
+                        </td>
+                        <td>
+                            <button v-on:click="Delete(item.A)">Delete</button>
+                        </td>
+                        <td>
+                            <router-link :to="{path: '/update/' + item.A}">Update</router-link>
+                        </td>
+                        <td>
+                            <router-link :to="{name: 'detail',params:{id: item.A}}">Detail</router-link>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8">
+            <p>
+                <!-- 使用 router-link 组件來導航. -->
+                <!-- 通過傳入 `to` 屬性指定連結. -->
+                <!-- 有效的 <router-link> 會被渲染成可點擊的 `<a>`標籤 -->
+                <router-link to="/insert">Insert</router-link>
+                <router-link to="/router1">router1</router-link>
+            </p>
+            <!-- 路由組件渲染在這 -->
+            <router-view></router-view>
+        </div>
+    </div>
+    <script src="component.js"></script>
+    <script src="crudExample.js"></script>
+
+</body>
+<html>
+
+</html>
