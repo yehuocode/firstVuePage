@@ -29,7 +29,7 @@ const router = new VueRouter({
 //     router
 // }).$mount('#app')
 
-// 现在，应用已经启动了！
+
 var getList = new Vue({
     el: '#table',
     data: {

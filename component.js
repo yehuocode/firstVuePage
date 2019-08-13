@@ -24,13 +24,14 @@ var insert = Vue.extend({
     template: '<div><h2>Insert</h2><p>{{data}}</p><p>A: <input type="text" v-model="data.A"></p><p>B: <input type="text" v-model="data.B"></p><button v-on:click="PostMethod">Insert</button></div>'
 });
 
+// 透過props取得參數
 var detail = Vue.extend({
     props: ['id'],
     data: function () {
         return { data: { A: '', B: '' } };
     },
     created: function () {
-        this.data.A = this.$route.params.id;
+        this.data.A = this.id;
         this.GetSingle();
     },
 
@@ -55,6 +56,7 @@ var detail = Vue.extend({
     template: '<div><h2>Row Detail</h2><p>A: {{data.A}}</p><p>B: {{data.B}}</p></div>'
 });
 
+// 直接取用$route.params取得參數
 var update = Vue.extend({
     data: function () {
         return { data: { A: '', B: '' } };
