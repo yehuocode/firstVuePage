@@ -9,7 +9,6 @@ const Foo = { template: '<div>router1 work!</div>' };
 // Vue.extend() 創建的組件構造器或組件配置對象(Vue.component)
 // 參考: https://router.vuejs.org/zh/api/#router-link-props
 const routes = [
-    
     { path: '/router1', component: Foo },                                   // 字串路由
     { path: '/insert', component: insert },
     { path: '/update/:id', component: update },                             // 帶參數的字串路由

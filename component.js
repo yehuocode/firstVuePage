@@ -19,9 +19,16 @@ var insert = Vue.extend({
         RandomMethod: function () {
             this.data.A = Math.floor((Math.random() * 100000) + 1);
         }
-
     },
-    template: '<div><h2>Insert</h2><p>{{data}}</p><p>A: <input type="text" v-model="data.A"></p><p>B: <input type="text" v-model="data.B"></p><button v-on:click="PostMethod">Insert</button></div>'
+    template: `
+        <div>
+            <h2>Insert</h2>
+            <p>{{data}}</p>
+            <p>A: <input type="text" v-model="data.A"></p>
+            <p>B: <input type="text" v-model="data.B"></p>
+            <button v-on:click="PostMethod">Insert</button>
+        </div>
+    `
 });
 
 // 透過props取得參數
@@ -53,7 +60,13 @@ var detail = Vue.extend({
             });
         }
     },
-    template: '<div><h2>Row Detail</h2><p>A: {{data.A}}</p><p>B: {{data.B}}</p></div>'
+    template: `
+        <div>
+            <h2>Row Detail</h2>
+            <p>A: {{data.A}}</p>
+            <p>B: {{data.B}}</p>
+        </div>
+    `
 });
 
 // 直接取用$route.params取得參數
@@ -82,7 +95,16 @@ var update = Vue.extend({
                 });
         }
     },
-    template: '<div><h2>Update</h2><p>{{data}}</p><p>A: {{ $route.params.id }}</p><p>B: <input type="text" v-model="data.B"></p><button v-on:click="UpdateClick">Update</button></div>'
+    template: `
+        <div>
+            <h2>Update</h2>
+            <p>{{data}}</p>
+            <p>A: {{ $route.params.id }}</p>
+            <p>B: <input type="text" v-model="data.B"></p>
+            <button v-on:click="UpdateClick">Update</button>
+        </div>
+    `
 });
 
 //$route.params.id
+
