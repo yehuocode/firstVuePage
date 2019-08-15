@@ -21,7 +21,7 @@ var insert = Vue.extend({
         }
     },
     template: `
-        <div>
+        <div style="background-color:#34d8eb;">
             <h2>Insert</h2>
             <p>{{data}}</p>
             <p>A: <input type="text" v-model="data.A"></p>
@@ -61,7 +61,7 @@ var detail = Vue.extend({
         }
     },
     template: `
-        <div>
+        <div style="background-color:#34eb89;">
             <h2>Row Detail</h2>
             <p>A: {{data.A}}</p>
             <p>B: {{data.B}}</p>
@@ -96,7 +96,7 @@ var update = Vue.extend({
         }
     },
     template: `
-        <div>
+        <div style="background-color:#dceb34;">
             <h2>Update</h2>
             <p>{{data}}</p>
             <p>A: {{ $route.params.id }}</p>
